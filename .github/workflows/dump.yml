@@ -1,7 +1,6 @@
 on:
-  push:
-  schedule:
-  - cron: 0 22 */7 * *
+  - push
+  - pull_request
 jobs:
   dump:
     if: github.event_name != 'schedule' || vars.ENABLE_SCHEDULE == 'true'
